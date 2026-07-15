@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // Tahun otomatis di footer
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach((section) => spyObserver.observe(section));
     }
 
-    // ---------- Scroll Reveal Animation ----------
+    // ---------- Scroll Reveal Animation (berulang tiap kali discroll) ----------
     const revealSelectors = [
         '.section-title',
         '.section-subtitle',
@@ -64,18 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealEls.forEach((el, i) => {
         el.classList.add('reveal');
-        // delay bertahap untuk elemen dalam grid/list yang sama (efek stagger halus)
         el.style.transitionDelay = `${(i % 4) * 0.08}s`;
     });
 
     if ('IntersectionObserver' in window && revealEls.length) {
         const revealObserver = new IntersectionObserver(
-            (entries, obs) => {
+            (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        obs.unobserve(entry.target); // animasi cukup sekali
-                    }
+                    entry.target.classList.toggle('in-view', entry.isIntersecting);
                 });
             },
             { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
@@ -83,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         revealEls.forEach((el) => revealObserver.observe(el));
     } else {
-        // fallback browser lama: langsung tampilkan
         revealEls.forEach((el) => el.classList.add('in-view'));
     }
 });
