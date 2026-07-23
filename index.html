@@ -305,9 +305,35 @@
                     <span class="tag">MySQL</span>
                     <span class="tag">Bootstrap 5</span>
                 </div>
+
+                <button type="button" class="btn btn-outline project-gallery-btn" data-gallery-target="gallery-pln">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+                    Lihat Proyek
+                </button>
+
+                <div class="project-gallery" id="gallery-pln" hidden>
+                    <img src="assets/pembangkit/home.png" alt="">
+                    <img src="assets/pembangkit/profile.png" alt="">
+                    <img src="assets/pembangkit/monitoring.png" alt="">
+                    <img src="assets/pembangkit/pegawai.png" alt="">
+                    <img src="assets/pembangkit/jabatan.png" alt="">
+                    <img src="assets/pembangkit/up3.png" alt="">
+                    <img src="assets/pembangkit/uld.png" alt="">
+                    <img src="assets/pembangkit/mesin.png" alt="">
+                    <img src="assets/pembangkit/mesin_semua.png" alt="">
+                    <img src="assets/pembangkit/usulan_sebelum.png" alt="">
+                    <img src="assets/pembangkit/usulan_sesudah.png" alt="">
+                    <img src="assets/pembangkit/relokasi_mesin.png" alt="">
+                    <img src="assets/pembangkit/riwayat_up3.png" alt="">
+                    <img src="assets/pembangkit/riwayat_uld.png" alt="">
+                    <img src="assets/pembangkit/riwayat_mesin.png" alt="">
+                    <img src="assets/pembangkit/pegawai_home.png" alt="">
+                    <img src="assets/pembangkit/pegawai_relokasi.png" alt="">
+                    <img src="assets/pembangkit/pegawai_buatdata.png" alt="">
+                </div>
             </article>
 
-            <!-- <article class="project-card">
+            <article class="project-card">
                 <div class="project-thumb">
                     <img src="assets/course/presensi.png" alt="Presensi Online Berbasis GPS dengan Foto Selfie">
                 </div>
@@ -321,7 +347,24 @@
                     <span class="tag">MySQL</span>
                     <span class="tag">Bootstrap 5</span>
                 </div>
-            </article> -->
+                <button type="button" class="btn btn-outline project-gallery-btn" data-gallery-target="gallery-presensi">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+                    Lihat Proyek 
+                </button>
+                <div class="project-gallery" id="gallery-presensi" hidden>
+                    <img src="assets/presensi/home.png" alt="">
+                    <img src="assets/presensi/profile.png" alt="">
+                    <img src="assets/presensi/jabatan.png" alt="">
+                    <img src="assets/presensi/pegawai.png" alt="">
+                    <img src="assets/presensi/lokasi_presensi.png" alt="">
+                    <img src="assets/presensi/rekap_harian.png" alt="">
+                    <img src="assets/presensi/rekap_bulanan.png" alt="">
+                    <img src="assets/presensi/ketidakhadiran.png" alt="">
+                    <img src="assets/presensi/pegawai_home.png" alt="">
+                    <img src="assets/presensi/pegawai_rekap_presensi.png" alt="">
+                    <img src="assets/presensi/pegawai_ketidakhadiran.png" alt="">
+                </div>
+            </article>
         </div>
     </div>
 </section>
@@ -429,6 +472,15 @@
             <p>// built by Fadhel Muhammad Rajib — <span id="year"></span></p>
         </div>
     </footer>
+
+    <!-- Lightbox modal (untuk galeri screenshot project) -->
+<div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Sebelumnya">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Berikutnya">&#8250;</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
 
     <script src="js/script.js"></script>
 </body>
